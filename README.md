@@ -5,6 +5,8 @@ This is a minimum reproduction of a bug I encountered trying to initialize a fir
 The shared firebase initialization code seems to be bundled together, and both pages end up importing the auth
 module twice, which I believe causes the 'cannot find module' error.
 
+Both src/page1/page1.html and src/page2/page2.html contains the same initialization code, which gets shared and causes an error on both pages.
+
 To reproduce:
 - Install dependencies with `npm install`
 - Run `npm run reproduce` to build the HTML files and run a dev server, serving an html page on `localhost:3000`
